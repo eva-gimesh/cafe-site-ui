@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+
+
+  <head>
+    <title>coffee shop</title>
+
+  </head>
+
+  <style>
+    body{background-image: url("https://i.pinimg.com/1200x/01/75/8e/01758e1e142612c9650e182f58f80f73.jpg"); background-repeat: no-repeat;
+     background-size: cover;position: absolute; background-color: #291200;}
+.name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(172, 127, 48);
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 6px 6px 8px black;
+  margin-top: 170px;
+}
+
+.subhead {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
+  color: rgb(126, 100, 54);
+  text-align: left;
+  margin-top: 80px;
+  margin-left: 5%;
+  margin-right: auto;
+  text-shadow: 2px 2px 4px black;
+}
+
+.intro {
+  background-color: rgba(172, 129, 83, 0.7);
+  
+  color: #2d1400;
+  width: 50%;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  margin-left: auto;
+  margin-right:5%;
+  margin-top: 0%;
+  
+}
+
+.box1 {
+  background-color: rgba(140, 100, 57, 0.8);
+  color: #3e1c00;
+  width: 40%;
+  margin: 40px auto;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  margin-left: 5%;
+  margin-right: auto;
+}
+
+#about {
+  background-image: url("https://i.pinimg.com/736x/4d/af/8f/4daf8f98bfa22fc8aa6f7a671a4ca0e4.jpg");
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-position:0%;
+  padding: 240px 0;
+  position: relative;
+  z-index: 2;
+
+ 
+}
+button{background-color:rgba(140, 100, 57, 0.6) ;color: #2d1400;}
+
+
+.slides {
+  position: relative;
+  width: 800px;
+  
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slide-show-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.items{
+  min-width: 98%;
+  background: #fff3e0;
+  border-radius: 15px;
+  padding: 30px 20px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #ffffff;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+
+  .booking-form{background-color: rgba(140, 100, 57, 0.8);
+  color: #3e1c00;
+  width: 55%;
+  margin-left: auto;
+  margin-right: 5%;
+  margin-top: 2%;
+  
+  border-radius: 20px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 18px ; text-align: right;}
+
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+
+.detail,
+.details {
+  background-color: rgba(140, 100, 57, 0.5);
+  color: #3e1c00;
+  width: 40%;
+  min-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.details {
+  color: bisque;
+  text-align: center;
+}
+
+.detail form input,
+.detail form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-family: inherit;
+}
+
+.detail form button {
+  background-color: #3e1c00;
+  color: bisque;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+      
+      
+    #menu {
+  display: none; 
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  background-color: rgba(230, 216, 201, 0.4);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+#menu a {
+  text-decoration: none;
+  color: #3e1c00;
+}
+#menu h1 {
+  font-size: 28px;
+  margin: 10px 0;
+
+}
+    
+    
+
+      
+  </style>
+   <div id="home">
+
+  
+    <button onclick="toggle()" style="font-size: 45px; position: absolute;">
+      ☰ 
+    </button>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="menu" style="position: absolute; color: #3e1c00;">
+      <h1><a href="#home">Home.</a></h1>
+      <h1><a href="#about">About Us.</a></h1>
+      <h1><a href="#card">Our Specialities.</a></h1>
+      <h1><a href="#book">Book Now!</a></h1>
+      <h1><a href="#contact">Contact Us.</a></h1>
+
+    </div>
+    
+    
+
+  </header>
+
+
+  <body>
+
+    
+
+   
+   
+
+
+    <div class="name">
+    <h1>The Velvet Bean</h1>
+    
+    
+    </div>
+     <div class="intro"><b>
+      <p>Welcome to The Velvet Bean — a space where mornings bloom gently and evenings slow down. Here, every brew is a whisper of comfort, every corner feels like home, and every sip reminds you to pause, breathe, </p>
+      
+      </b>
+
+    
+
+     </div>
+    </div>
+    <br>
+    <div id="about">
+
+     <div class="subhead">
+      <h1>
+        About Us.
+      </h1>
+     </div>
+
+    
+     <div class="box1"><b>
+      
+
+    <p>The Velvet Bean was born from a quiet dream and a deep love for the little things. Founded by a girl who believed that life’s softest moments live in warm cups and slow conversations, this space was once just a notebook sketch — a vision scribbled between pages of poetry and coffee-stained thoughts. After years of gathering vintage mugs, collecting stories from quiet cafés around the world, and perfecting the kind of brew that feels like a hug, she opened these doors with one simple intention: to create a home for wandering souls, tired hearts, and anyone who needs a pause. Today, The Velvet Bean stands not just as a café, but as a love letter to stillness, comfort, and the art of slowing down.</p>
+    </b>
+     </div>
+     
+    </div>
+
+    <!-- Section Title -->
+<div id="card">
+  <h1 style="font-size: 95px; color:rgb(172, 127, 48); text-align:center; text-shadow: 2px 2px 4px black; margin-top: -100px;">
+    Our Specialities.
+  </h1>
+
+  <!-- BOX 1 -->
+
+<div class="slides">
+
+  <button class="nav prev">&#10094;</button>
+<div class="slide-show-container">
+
+  
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/736x/7b/54/29/7b54296628a5e1739924ba88a10c7182.jpg" alt="cappuccino" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Classic Cappuccino</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Smooth, velvety, and rich — our signature cappuccino is made with a double shot of espresso and frothy milk, finished with a delicate sprinkle of cocoa.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹180</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX 2 -->
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/17/59/c9/1759c9d02a4c3edb398c986e42629148.jpg" alt="iced caramel latte" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Iced Caramel Latte</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Refreshing and indulgent, this chilled beauty is layered with creamy milk, caramel drizzle, and a bold espresso shot.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹220</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/b2/41/ba/b241ba6d024afa21328e70a1d6ba4dd2.jpg" alt="Hazelnut Cold Brew" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Hazelnut Cold Brew</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Slow-steeped for over 12 hours, this cold brew gets a nutty upgrade with a touch of roasted hazelnut syrup.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹240</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/f1/4e/70/f14e7007806beed9f34ff9cf733e5e52.jpg" alt="Espresso Macchiato" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Espresso Macchiato</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          A shot of pure strength with a kiss of foam — our macchiato is small, strong, and unapologetically bold.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹160</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/0f/90/3e/0f903eaf03997bb34dc7e47076f7ec4c.jpg" alt="Vanilla Bean Frappe" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Vanilla Bean Frappe</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Crushed ice, vanilla bean extract, cream, and espresso blended into a frosty delight — your sweet fix awaits.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹250</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/92/9f/b4/929fb4d29a7b7f292d98b338c5b08fb9.jpg" alt="Affogato Bliss" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Affogato Bliss</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          A scoop of creamy vanilla ice cream drowned in a shot of hot espresso — dessert and coffee in one dreamy bite.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹250</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/736x/d7/23/3a/d7233a04fd31b7c6e93a2f62fd454c78.jpg" alt="Mocha Madness" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Mocha Madness</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Chocolate and espresso collide in this rich, decadent drink topped with whipped cream and a dusting of cocoa.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹270</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/bd/d7/fe/bdd7fe2aa94179bdec7269ab4caef108.jpg" alt="Matcha Latte" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Matcha Latte</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          For the green tea lovers — earthy ceremonial matcha blended with silky milk for a calm, creamy energy boost.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹250</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/7f/95/5e/7f955e6cd034cca4a140334fbc091029.jpg" alt="Chai Spice Latte" 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;">Chai Spice Latte</h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Aromatic Indian spices, black tea, steamed milk, and a hint of honey — warm comfort in a cup.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹190</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="items" style="background-color: rgba(140, 100, 57, 0.8); color: #3e1c00; width: 50%; margin: 40px auto 0 auto; padding: 5px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); font-size: 18px;">
+    <div style="display: flex;">
+      <img src="https://i.pinimg.com/1200x/7c/68/e5/7c68e59531e24a49f2288bc95ce43ff4.jpg" alt=" Signature Filter Kaapi " 
+      style="width: 300px; padding: 20px; border-radius: 50%;">
+
+      <div>
+        <h1 style="font-size: 28px; font-family:'Lucida Sans', sans-serif; color:#3e1c00;"> Signature Filter Kaapi </h1>
+        <p style="font-size:21px; font-family: 'Times New Roman', Times, serif; color: #2d1400;">
+          Our South Indian-style filter coffee is brewed to perfection and frothed with love — strong, sweet, and soulful.
+        </p>
+        <h1 style="font-size: 35px; font-family:'Lucida Sans', sans-serif; color:#3e1c00; text-align: center;">₹150</h1>
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>
+
+<button class="nav next">&#10095;</button>
+</div>
+
+
+</div>
+
+
+<div id="book" style="background-image: url(https://i.pinimg.com/736x/db/53/62/db5362691056f5504d5b2c79a8599e38.jpg); background-repeat: no-repeat; 
+background-size: cover; margin-top: 8%;">
+
+  
+
+  <div class="booking">
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 45px;color: rgb(148, 110, 46); text-align: right; margin-right: 3%; 
+  text-shadow: 2px 2px 4px black; margin-top: 5%;">
+    Reserve Your Spot Now</h2>
+
+  </div>
+
+<div class="booking-form" style="max-width: 450px; margin-left: 55%; font-family: 'Times New Roman', Times, serif; font-size: 16px; color: bisque;">
+  <h2 style="text-align: center; color:#3e1c00;">Book a Table Now</h2>
+
+  <form style="display: flex; flex-direction: column; gap: 12px; padding: 20px; background-color: rgba(0, 0, 0, 0.2); border-radius: 10px;">
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required style="padding: 6px; font-size: 14px;">
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required style="padding: 6px; font-size: 14px;">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" style="padding: 6px; font-size: 14px;">
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required style="padding: 6px; font-size: 14px;">
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required style="padding: 6px; font-size: 14px;">
+
+    <label for="table">No. of People:</label>
+    <input type="number" id="table" name="table" required style="padding: 6px; font-size: 14px;">
+
+    <button type="submit" style="margin-top: 10px; background-color: rgb(172, 127, 48); color: white; padding: 8px; font-size: 15px; border: none; border-radius: 5px; cursor: pointer;">Book Now</button>
+  </form>
+</div>
+
+
+  <br>
+  <br>
+
+
+</div>
+
+<div id="contact" style="padding: 60px 5%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+  <h1 style="font-size: 75px; color: rgb(172, 127, 48); text-align: center; text-shadow: 4px 4px 6px black; margin-bottom: 10px;">
+    Contact Us.
+  </h1>
+
+  <p style="font-size: 20px; color: bisque; text-align: center; margin-bottom: 40px;">
+    Got questions, feedback, or just want to say hi? We’d love to hear from you!<br>
+    Reach out using any of the options below.
+  </p>
+
+  <!-- Flex Container -->
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1200px; margin: auto;">
+
+    <!-- Contact Form -->
+    <div style="flex: 1 1 500px; min-width: 300px; background-color: rgba(140, 100, 57, 0.5); color: bisque; padding: 30px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);">
+      <h3 style="font-size: 26px; margin-bottom: 20px; text-align: center;">Send Us a Message</h3>
+      <form>
+        <label>Name:</label><br>
+        <input type="text" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px;"><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 15px;"><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="5" required style="width: 100%; padding: 10px;"></textarea><br><br>
+
+        <button type="submit" style="background-color: rgb(172, 127, 48); color: white; padding: 10px 25px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex: 1 1 300px; min-width: 300px; background-color: rgba(140, 100, 57, 0.5); color: bisque; padding: 30px; border-radius: 20px; box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2); text-align: left;">
+      <h3 style="font-size: 26px; text-align: center;">📍 Visit Us</h3>
+      <p style="text-align: center;">
+        The Velvet Bean<br>
+        123 Brew Street,<br>
+        Kochi, Kerala - 682XXX
+      </p>
+
+      <h3 style="font-size: 26px; text-align: center;">📞 Call Us</h3>
+      <p style="text-align: center;">+91 98765 43210</p>
+
+      <h3 style="font-size: 26px; text-align: center;">📧 Email Us</h3>
+      <p style="text-align: center;">eva@velvetbean.in</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+  const track = document.querySelector('.slide-show-container');
+  const cards = document.querySelectorAll('.items');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let index = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prev.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateSlide();
+    }
+  });
+
+  next.addEventListener('click', () => {
+    if (index < cards.length - 1) {
+      index++;
+      updateSlide();
+    }
+  });
+</script>
+
+
+
+
+
+  
+    <script>
+      function toggle()
+          {var menu= document.getElementById("menu")
+        if (menu.style.display ==="none" || menu.style.display === "")
+        {menu.style.display="block";}
+        else{menu.style.display="none"}
+      }
+
+   
+    </script>
+
+   
+  
+  </body>
+
+
+</html>
